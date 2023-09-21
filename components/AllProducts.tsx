@@ -13,7 +13,7 @@ const AllProducts = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto mb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 py-6 px-4`}
+      className={`${styles.innerWidth} mx-auto mb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 gap-y-4 py-6 px-4`}
     >
       {webData.product_screen.products.map((product) => (
         <div
