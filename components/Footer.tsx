@@ -25,7 +25,7 @@ const Footer = () => {
             Get Started
           </h4>
           <Link
-            href="/request-form"
+            href="/#contact"
             className="bg-[rgb(0,88,38)] rounded-lg drop-shadow-xl shadow-xl text-white py-3 px-4 text-lg font-kbold flex items-center gap-2 "
           >
             <BiSolidBookOpen />

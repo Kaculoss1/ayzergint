@@ -24,9 +24,9 @@ const Partners = () => {
           variants={fadeIn("up", "tween", 0.2, 1)}
           className="mt-[8px] mb-8 font-normal sm:text-[32px] text-[20px] text-center text-secondary-white "
         >
-          We carefully select and continually grow our strategic partnerships
-          which afford us the necessary resource required to offer our clients,
-          local and international, the best service that meets their needs.
+          We deliberately pick and maintain strategic alliances that provide us
+          with the resources we need to provide the finest service possible to
+          our clients, both local and international.
         </motion.p>
 
         <div className="w-full flex items-center gap-8 justify-center px-4 flex-wrap">

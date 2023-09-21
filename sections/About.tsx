@@ -31,9 +31,10 @@ const About = () => {
           is a privately held professional{" "}
           <span className="font-kextrabold text-white">trading, finance</span>{" "}
           and <span className="font-kextrabold text-white">investment </span>
-          group of companies registered and operating in East Africa, West
-          Africa, Europe, Mauritius and the United Arab Emirates and association
-          with Joint Venture (JV) Partners.
+          group of companies registered and operating in West Africa and
+          association with Joint Venture (JV) Partners. At Ayzer Group
+          International, we are more than just a brokerage firm; we are a team
+          of experienced and skilled financial traders with a global reach.
         </motion.p>
 
         <motion.div variants={fadeIn("down", "tween", 0.3, 1)}>

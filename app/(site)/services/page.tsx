@@ -1,9 +1,13 @@
+import { Service, ServiceBanner } from "@/components";
+import { webData } from "@/webData";
+
 export default function ServicePage() {
   return (
     <>
-      <div className="font-kextrabold mt-24 text-xl min-h-[70vh]">
-        Service page
-      </div>
+      <ServiceBanner />
+      {webData.service_screen.services.map((service, index) => (
+        <Service key={service.id} {...service} index={index} />
+      ))}
     </>
   );
 }

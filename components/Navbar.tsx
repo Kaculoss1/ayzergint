@@ -9,21 +9,41 @@ import menu from "../assets/menu.svg";
 import close from "../assets/close.svg";
 import Link from "next/link";
 import { useState } from "react";
-import { webData } from "@/webData";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const [active, setActive] = useState<string>("/");
   const [toggle, setToggle] = useState<boolean>(false);
 
-  const handleClick = () => {
-    setActive("");
-    window.scrollTo(0, 0);
-  };
+  const pathname = usePathname();
 
-  const handleSmallClick = (link: string) => {
-    setActive(link);
-    setToggle(!toggle);
-  };
+  const navs = [
+    { name: "Home", href: "/", isCurrent: pathname === "/" },
+    {
+      name: "About",
+      href: "/about",
+      isCurrent: pathname.startsWith("/about"),
+    },
+    {
+      name: "Services",
+      href: "/services",
+      isCurrent: pathname.startsWith("/services"),
+    },
+    {
+      name: "Products",
+      href: "/products",
+      isCurrent: pathname.startsWith("/products"),
+    },
+    {
+      name: "Partners",
+      href: "/#partners",
+      isCurrent: pathname.startsWith("/#partners"),
+    },
+    {
+      name: "Contact",
+      href: "/#contact",
+      isCurrent: pathname.startsWith("/#contact"),
+    },
+  ];
 
   return (
     <motion.nav
@@ -36,7 +56,9 @@ const Navbar = () => {
         <Link
           href="/"
           className="flex items-center gap-2"
-          onClick={handleClick}
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
         >
           <Image
             src={logo}
@@ -45,15 +67,14 @@ const Navbar = () => {
           />
         </Link>
         <ul className="list-none hidden md:flex flex-row gap-4 lg:gap-6">
-          {webData.header.navbarLinks.map((link) => (
+          {navs.map((link) => (
             <li
               key={link.name}
-              onClick={() => setActive(link.link)}
               className={`${
-                active === link.link ? "text-white" : "text-secondary"
+                link.isCurrent ? "text-white" : "text-secondary"
               } hover:text-white lg:text-base text-sm font-kmedium cursor-pointer `}
             >
-              <Link href={link.link}>{link.name}</Link>
+              <Link href={link.href}>{link.name}</Link>
             </li>
           ))}
         </ul>
@@ -71,15 +92,15 @@ const Navbar = () => {
             } p-6 green-gray-gradient absolute top-20 right-0 mx-4 mr-2 min-w-[140px] z-10 rounded-xl `}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
-              {webData.header.navbarLinks.map((link) => (
+              {navs.map((link) => (
                 <li
                   key={link.name}
-                  onClick={() => handleSmallClick(link.link)}
+                  onClick={() => setToggle(!toggle)}
                   className={`${
-                    active === link.link ? "text-white" : "text-secondary"
+                    link.isCurrent ? "text-white" : "text-secondary"
                   } font-kmedium cursor-pointer text-base`}
                 >
-                  <Link href={link.link}>{link.name}</Link>
+                  <Link href={link.href}>{link.name}</Link>
                 </li>
               ))}
             </ul>

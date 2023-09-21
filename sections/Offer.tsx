@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Offer = () => {
-  const [active, setActive] = useState<string>("offer-05");
+  const [active, setActive] = useState<string>("offer-03");
 
   return (
     <section className={`${styles.paddings}`} id="offer">

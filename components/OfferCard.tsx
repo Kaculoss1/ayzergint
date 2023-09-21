@@ -68,7 +68,7 @@ const OfferCard = ({
             {title}
           </h2>
           <p className="mt-2 font-normal text-[16px] leading-[20px] text-white ">
-            {desc.substring(0, 100)}...
+            {desc}
           </p>
           <div className="flex justify-end w-full">
             <Link

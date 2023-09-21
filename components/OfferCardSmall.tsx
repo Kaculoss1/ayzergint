@@ -41,7 +41,7 @@ const OfferCardSmall = ({ imgUrl, icon, title, index, desc }: IProps) => {
         </div>
         <h2 className=" w-full font-semibold text-base text-white">{title}</h2>
         <p className=" font-normal text-sm text-white ">
-          {desc.substring(0, 50)}...
+          {desc.substring(0, 75)}...
         </p>
         <div className="flex justify-end  w-full">
           <Link

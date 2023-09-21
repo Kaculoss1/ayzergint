@@ -40,13 +40,13 @@ const Hero = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex flex-col `}
+        className={` mx-auto flex flex-col `}
       >
         <Slider {...settings} nextArrow={<></>} prevArrow={<></>}>
           {webData.home_screen.banners.map((banner) => (
             <div key={banner.message}>
               <Image
-                className="w-full h-[240px] md:h-[300px] lg:h-[400px] object-cover blur-[2px]"
+                className="w-full h-[240px] md:h-[300px] lg:h-[400px] object-cover "
                 src={banner.banner}
                 alt="banner"
               />
