@@ -3,6 +3,7 @@
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motion";
+import styles from "@/styles";
 
 interface IProps {
   imgUrl: StaticImageData;
@@ -20,8 +21,8 @@ const Subsidiaries = ({ imgUrl, desc, title, index }: IProps) => {
         index * 0.5,
         0.75
       )}
-      className={` ${
-        (index + 1) % 2 === 0 ? "flex-row" : "flex-row-reverse"
+      className={` ${(index + 1) % 2 === 0 ? "flex-row" : "flex-row-reverse"} ${
+        styles.innerWidth
       } relative flex items-center gap-6 justify-center w-full transition-[flex] duration-[0.7s] ease-out-flex `}
     >
       <Image
