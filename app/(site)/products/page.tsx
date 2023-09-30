@@ -1,6 +1,11 @@
 import { ProductsBanner } from "@/components";
 import AllProducts from "@/components/AllProducts";
 import styles from "@/styles";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AGI | Products",
+};
 
 export default function ProductsPage() {
   return (
