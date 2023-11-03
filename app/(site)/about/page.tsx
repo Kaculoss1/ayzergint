@@ -15,7 +15,7 @@ export default function AboutPage() {
       <div className="relative">
         <div className="gradient-04 z-0" />
         <div
-          className={`${styles.innerWidth} mt-16 mx-auto flex flex-col items-center gap-10`}
+          className={`${styles.paddingX} mt-16 mx-auto flex flex-col items-center gap-10`}
         >
           {webData.about_screen.subsidiaries.map((subs, index) => (
             <Subsidiaries key={subs.id} {...subs} index={index} />
